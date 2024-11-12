@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				118474562CE299DC00ABEE0E /* Configs.swift */,
-				1184745A2CE29ACF00ABEE0E /* Data Model */,
+				1184745A2CE29ACF00ABEE0E /* Data Models */,
 				118474542CE2993C00ABEE0E /* Main Screen */,
 				1184743E2CE2988B00ABEE0E /* SceneDelegate.swift */,
 				1184743C2CE2988B00ABEE0E /* AppDelegate.swift */,
@@ -108,12 +108,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1184745A2CE29ACF00ABEE0E /* Data Model */ = {
+		1184745A2CE29ACF00ABEE0E /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
 				118474582CE29AC700ABEE0E /* Chat.swift */,
 			);
-			path = "Data Model";
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

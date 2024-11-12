@@ -12,9 +12,9 @@ struct Chat: Codable{
     //@DocumentID var id: String?
     var name: String
     var text: String
-    var date: Date
+    var date: Int
     
-    init(name: String, text: String, date: Date) {
+    init(name: String, text: String, date: Int) {
         self.name = name
         self.text = text
         self.date = date
