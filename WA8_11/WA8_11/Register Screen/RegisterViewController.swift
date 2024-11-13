@@ -8,22 +8,20 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    let registerView = RegisterView()
+        
+    override func loadView() {
+        view = registerView
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationController?.navigationBar.prefersLargeTitles = true
+        registerView.buttonRegister.addTarget(self, action: #selector(onRegisterTapped), for: .touchUpInside)
+        title = "Register"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func onRegisterTapped(){
+        //MARK: creating a new user on Firebase...
+        registerNewAccount()
     }
-    */
-
 }

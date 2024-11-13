@@ -22,6 +22,9 @@
 		118474602CE2A14F00ABEE0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1184745F2CE2A14F00ABEE0E /* GoogleService-Info.plist */; };
 		118474632CE2AB6200ABEE0E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 118474622CE2AB6200ABEE0E /* FirebaseAuth */; };
 		118474652CE2AB6200ABEE0E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 118474642CE2AB6200ABEE0E /* FirebaseFirestore */; };
+		1184748F2CE4155D00ABEE0E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1184748E2CE4155D00ABEE0E /* RegisterView.swift */; };
+		118474932CE4160B00ABEE0E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118474922CE4160B00ABEE0E /* RegisterViewController.swift */; };
+		118474972CE416C900ABEE0E /* RegisterFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118474962CE416C900ABEE0E /* RegisterFirebaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		1184745B2CE29CB600ABEE0E /* ChatsTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewManager.swift; sourceTree = "<group>"; };
 		1184745D2CE29CEE00ABEE0E /* RightBarButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightBarButtonManager.swift; sourceTree = "<group>"; };
 		1184745F2CE2A14F00ABEE0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1184748E2CE4155D00ABEE0E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		118474922CE4160B00ABEE0E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		118474962CE416C900ABEE0E /* RegisterFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirebaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				118474562CE299DC00ABEE0E /* Configs.swift */,
+				118474912CE4157500ABEE0E /* Register Screen */,
 				1184745A2CE29ACF00ABEE0E /* Data Models */,
 				118474542CE2993C00ABEE0E /* Main Screen */,
 				1184743E2CE2988B00ABEE0E /* SceneDelegate.swift */,
@@ -114,6 +121,25 @@
 				118474582CE29AC700ABEE0E /* Chat.swift */,
 			);
 			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		118474902CE4156500ABEE0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1184748E2CE4155D00ABEE0E /* RegisterView.swift */,
+			);
+			name = View;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		118474912CE4157500ABEE0E /* Register Screen */ = {
+			isa = PBXGroup;
+			children = (
+				118474902CE4156500ABEE0E /* View */,
+				118474922CE4160B00ABEE0E /* RegisterViewController.swift */,
+				118474962CE416C900ABEE0E /* RegisterFirebaseManager.swift */,
+			);
+			path = "Register Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +222,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				118474412CE2988B00ABEE0E /* ViewController.swift in Sources */,
+				118474972CE416C900ABEE0E /* RegisterFirebaseManager.swift in Sources */,
+				118474932CE4160B00ABEE0E /* RegisterViewController.swift in Sources */,
+				1184748F2CE4155D00ABEE0E /* RegisterView.swift in Sources */,
 				118474532CE2993300ABEE0E /* ChatsTableViewCell.swift in Sources */,
 				118474592CE29AC700ABEE0E /* Chat.swift in Sources */,
 				1184745E2CE29CEE00ABEE0E /* RightBarButtonManager.swift in Sources */,

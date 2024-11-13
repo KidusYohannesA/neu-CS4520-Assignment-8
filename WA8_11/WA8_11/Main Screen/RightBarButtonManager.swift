@@ -79,8 +79,8 @@ extension ViewController{
         //MARK: TODO: Create registation page
         let registerAction = UIAlertAction(title: "Register", style: .default, handler: {(_) in
             //MARK: logic to open the register screen...
-            //let registerViewController = RegisterViewController()
-            //self.navigationController?.pushViewController(registerViewController, animated: true)
+            let registerViewController = RegisterViewController()
+            self.navigationController?.pushViewController(registerViewController, animated: true)
         })
         
         

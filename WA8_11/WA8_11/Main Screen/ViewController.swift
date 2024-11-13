@@ -58,6 +58,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view = mainScreen
+
+        
         title = "My Messages"
         //MARK: patching table view delegate and data source...
         mainScreen.tableViewContacts.delegate = self
@@ -78,7 +81,7 @@ class ViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //Auth.auth().removeStateDidChangeListener(handleAuth!)
+        Auth.auth().removeStateDidChangeListener(handleAuth!)
     }
     
     func signIn(email: String, password: String){
