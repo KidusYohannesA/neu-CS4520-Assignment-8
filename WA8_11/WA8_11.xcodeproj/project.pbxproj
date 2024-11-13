@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111A872A2CE540A40002016A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 111A87292CE540A40002016A /* GoogleService-Info.plist */; };
 		1184743D2CE2988B00ABEE0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1184743C2CE2988B00ABEE0E /* AppDelegate.swift */; };
 		1184743F2CE2988B00ABEE0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1184743E2CE2988B00ABEE0E /* SceneDelegate.swift */; };
 		118474412CE2988B00ABEE0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118474402CE2988B00ABEE0E /* ViewController.swift */; };
@@ -19,7 +20,6 @@
 		118474592CE29AC700ABEE0E /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118474582CE29AC700ABEE0E /* Chat.swift */; };
 		1184745C2CE29CB600ABEE0E /* ChatsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1184745B2CE29CB600ABEE0E /* ChatsTableViewManager.swift */; };
 		1184745E2CE29CEE00ABEE0E /* RightBarButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1184745D2CE29CEE00ABEE0E /* RightBarButtonManager.swift */; };
-		118474602CE2A14F00ABEE0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1184745F2CE2A14F00ABEE0E /* GoogleService-Info.plist */; };
 		118474632CE2AB6200ABEE0E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 118474622CE2AB6200ABEE0E /* FirebaseAuth */; };
 		118474652CE2AB6200ABEE0E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 118474642CE2AB6200ABEE0E /* FirebaseFirestore */; };
 		1184748F2CE4155D00ABEE0E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1184748E2CE4155D00ABEE0E /* RegisterView.swift */; };
@@ -28,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		111A87292CE540A40002016A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		118474392CE2988B00ABEE0E /* WA8_11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WA8_11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1184743C2CE2988B00ABEE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1184743E2CE2988B00ABEE0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		118474582CE29AC700ABEE0E /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		1184745B2CE29CB600ABEE0E /* ChatsTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewManager.swift; sourceTree = "<group>"; };
 		1184745D2CE29CEE00ABEE0E /* RightBarButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightBarButtonManager.swift; sourceTree = "<group>"; };
-		1184745F2CE2A14F00ABEE0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1184748E2CE4155D00ABEE0E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		118474922CE4160B00ABEE0E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		118474962CE416C900ABEE0E /* RegisterFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirebaseManager.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 				118474452CE2988D00ABEE0E /* Assets.xcassets */,
 				118474472CE2988D00ABEE0E /* LaunchScreen.storyboard */,
 				1184744A2CE2988D00ABEE0E /* Info.plist */,
-				1184745F2CE2A14F00ABEE0E /* GoogleService-Info.plist */,
+				111A87292CE540A40002016A /* GoogleService-Info.plist */,
 			);
 			path = WA8_11;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				118474462CE2988D00ABEE0E /* Assets.xcassets in Resources */,
-				118474602CE2A14F00ABEE0E /* GoogleService-Info.plist in Resources */,
+				111A872A2CE540A40002016A /* GoogleService-Info.plist in Resources */,
 				118474492CE2988D00ABEE0E /* Base in Resources */,
 				118474442CE2988B00ABEE0E /* Base in Resources */,
 			);
