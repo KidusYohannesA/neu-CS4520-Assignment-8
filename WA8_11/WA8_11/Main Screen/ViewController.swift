@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         view.bringSubviewToFront(mainScreen.floatingButtonAddContact)
         
         //MARK: tapping the floating add contact button...
-        mainScreen.floatingButtonAddContact.addTarget(self, action: #selector(addContactButtonTapped), for: .touchUpInside)
+        mainScreen.floatingButtonAddContact.addTarget(self, action: #selector(addChatButtonTapped), for: .touchUpInside)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -87,6 +87,37 @@ class ViewController: UIViewController {
     func signIn(email: String, password: String){
     }
     
-    @objc func addContactButtonTapped(){
+    @objc func addChatButtonTapped(){
+        let createChatAlert = UIAlertController(
+            title: "Enter recipients email",
+            message: "Who do you want to chat with?",
+            preferredStyle: .alert)
+        
+        //MARK: setting up email textField in the alert...
+        createChatAlert.addTextField{ textField in
+            textField.placeholder = "Enter email"
+            textField.contentMode = .center
+            textField.keyboardType = .emailAddress
+        }
+        
+        //MARK: Sign In Action...
+        let createChatAction = UIAlertAction(title: "Create chat", style: .default, handler: {(_) in
+            if let email = createChatAlert.textFields![0].text{
+                //MARK: TODO, displaying the chat screen
+                //let ChatViewController = ChatViewController()
+                //self.navigationController?.pushViewController(ChatViewController, animated: true)
+            }
+        })
+        
+        //MARK: action buttons...
+        createChatAlert.addAction(createChatAction)
+        
+        self.present(createChatAlert, animated: true, completion: {() in
+            //MARK: hide the alerton tap outside...
+            createChatAlert.view.superview?.isUserInteractionEnabled = true
+            createChatAlert.view.superview?.addGestureRecognizer(
+                UITapGestureRecognizer(target: self, action: #selector(self.onTapOutsideAlert))
+            )
+        })
     }
 }
