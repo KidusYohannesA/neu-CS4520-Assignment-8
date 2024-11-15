@@ -8,15 +8,16 @@
 import Foundation
 //import FirebaseFirestore
 
-struct Chat: Codable{
-    //@DocumentID var id: String?
-    var name: String
-    var text: String
-    var date: Int
+struct Chat {
+    let sender: String
+    let recipient: String
+    let text: String
+    let timestamp: Date
     
-    init(name: String, text: String, date: Int) {
-        self.name = name
+    init(sender: String, recipient: String, text: String, timestamp: Date) {
+        self.sender = sender
+        self.recipient = recipient
         self.text = text
-        self.date = date
+        self.timestamp = timestamp
     }
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,6 +48,10 @@
 		118474962CE416C900ABEE0E /* RegisterFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFirebaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		353C0F162CE54C10003B1A5F /* ChatView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ChatView; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		118474362CE2988B00ABEE0E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -91,6 +95,7 @@
 				118474472CE2988D00ABEE0E /* LaunchScreen.storyboard */,
 				1184744A2CE2988D00ABEE0E /* Info.plist */,
 				111A87292CE540A40002016A /* GoogleService-Info.plist */,
+				353C0F162CE54C10003B1A5F /* ChatView */,
 			);
 			path = WA8_11;
 			sourceTree = "<group>";
@@ -156,6 +161,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				353C0F162CE54C10003B1A5F /* ChatView */,
 			);
 			name = WA8_11;
 			packageProductDependencies = (

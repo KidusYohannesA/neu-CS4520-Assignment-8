@@ -15,9 +15,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewContactsID, for: indexPath) as! ChatsTableViewCell
-        cell.labelName.text = messageList[indexPath.row].name
+        cell.labelName.text = messageList[indexPath.row].sender
         cell.labelText.text = messageList[indexPath.row].text
-        cell.labelDate.text = "\(messageList[indexPath.row].date)"
+        cell.labelDate.text = "\(messageList[indexPath.row].timestamp)"
         return cell
     }
 }
