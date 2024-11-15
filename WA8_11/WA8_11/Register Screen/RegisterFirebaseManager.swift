@@ -12,6 +12,7 @@ import UIKit
 extension RegisterViewController{
     
     func registerNewAccount(){
+        
         //MARK: create a Firebase user with email and password...
         if let name = registerView.textFieldName.text,
            let email = registerView.textFieldEmail.text,

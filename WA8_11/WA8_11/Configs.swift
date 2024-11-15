@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
 class Configs{
+    
     static let tableViewChatsID = "tableViewChatssID"
 }

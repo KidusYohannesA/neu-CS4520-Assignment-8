@@ -8,6 +8,7 @@
 import UIKit
 
 class RegisterView: UIView {
+    
     var textFieldName: UITextField!
     var textFieldEmail: UITextField!
     var textFieldPassword: UITextField!

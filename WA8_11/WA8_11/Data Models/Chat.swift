@@ -9,6 +9,7 @@ import Foundation
 import FirebaseFirestore
 
 struct Chat {
+    
     let sender: String
     let recipient: String
     let text: String

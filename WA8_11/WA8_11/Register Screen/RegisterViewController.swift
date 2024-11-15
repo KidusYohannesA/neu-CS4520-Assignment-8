@@ -8,6 +8,7 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    
     let registerView = RegisterView()
         
     override func loadView() {

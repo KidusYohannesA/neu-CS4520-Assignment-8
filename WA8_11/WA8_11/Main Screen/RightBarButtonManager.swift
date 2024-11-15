@@ -11,6 +11,7 @@ import UIKit
 
 extension ViewController{
     func setupRightBarButton(isLoggedin: Bool){
+        
         if isLoggedin{
             //MARK: user is logged in...
             let barIcon = UIBarButtonItem(
@@ -48,6 +49,7 @@ extension ViewController{
     }
     
     @objc func onSignInBarButtonTapped(){
+        
         let signInAlert = UIAlertController(
             title: "Sign In / Register",
             message: "Please sign in to continue.",
@@ -97,10 +99,12 @@ extension ViewController{
         })
     }
     @objc func onTapOutsideAlert(){
+        
         self.dismiss(animated: true)
     }
     
     @objc func onLogOutBarButtonTapped(){
+        
         let logoutAlert = UIAlertController(title: "Logging out!", message: "Are you sure want to log out?", preferredStyle: .actionSheet)
         logoutAlert.addAction(UIAlertAction(title: "Yes, log out!", style: .default, handler: {(_) in
                 do{
@@ -116,6 +120,7 @@ extension ViewController{
     }
     
     func signInToFirebase(email: String, password: String){
+        
         //MARK: can you display progress indicator here?
         //MARK: authenticating the user...
         Auth.auth().signIn(withEmail: email, password: password, completion: {(result, error) in

@@ -95,6 +95,7 @@ class ChatView: UIView {
             messageTextField.leadingAnchor.constraint(equalTo: messageInputContainer.leadingAnchor, constant: 10),
             messageTextField.centerYAnchor.constraint(equalTo: messageInputContainer.centerYAnchor),
             messageTextField.heightAnchor.constraint(equalToConstant: 40),
+            messageTextField.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             
             sendButton.leadingAnchor.constraint(equalTo: messageTextField.trailingAnchor, constant: 10),
             sendButton.trailingAnchor.constraint(equalTo: messageInputContainer.trailingAnchor, constant: -10),
