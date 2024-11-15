@@ -103,9 +103,11 @@ class ViewController: UIViewController {
         //MARK: Sign In Action...
         let createChatAction = UIAlertAction(title: "Create chat", style: .default, handler: {(_) in
             if let email = createChatAlert.textFields![0].text{
+                print("Recipient's email: \(email)")
                 //MARK: TODO, displaying the chat screen
-                //let ChatViewController = ChatViewController()
-                //self.navigationController?.pushViewController(ChatViewController, animated: true)
+                let ChatViewController = ChatViewController()
+                ChatViewController.recipient = email
+                self.navigationController?.pushViewController(ChatViewController, animated: true)
             }
         })
         
