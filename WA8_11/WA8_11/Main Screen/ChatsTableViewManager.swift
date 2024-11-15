@@ -14,10 +14,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewContactsID, for: indexPath) as! ChatsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Configs.tableViewChatsID, for: indexPath) as! ChatsTableViewCell
         cell.labelName.text = messageList[indexPath.row].sender
         cell.labelText.text = messageList[indexPath.row].text
         cell.labelDate.text = "\(messageList[indexPath.row].timestamp)"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //MARK: TODO, displaying the chat screen
+        let ChatViewController = ChatViewController()
+        ChatViewController.recipient = messageList[indexPath.row].sender
+        self.navigationController?.pushViewController(ChatViewController, animated: true)
     }
 }

@@ -14,11 +14,13 @@ class ViewController: UIViewController {
 
     let mainScreen = MainScreenView()
     
-    var messageList = [Chat]()
+    var messageList = [DisplayChat]()
     
     var handleAuth: AuthStateDidChangeListenerHandle?
     
     var currentUser:FirebaseAuth.User?
+    
+    let database = Firestore.firestore()
         
     override func loadView() {
         view = mainScreen
@@ -37,7 +39,7 @@ class ViewController: UIViewController {
                     
                     //MARK: Reset tableView...
                     self.messageList.removeAll()
-                    self.mainScreen.tableViewContacts.reloadData()
+                    self.mainScreen.tableViewChats.reloadData()
                     
                     //MARK: Sign in bar button...
                     self.setupRightBarButton(isLoggedin: false)
@@ -50,7 +52,26 @@ class ViewController: UIViewController {
                     self.mainScreen.floatingButtonAddContact.isHidden = false
                     //MARK: Logout bar button...
                     self.setupRightBarButton(isLoggedin: true)
-
+                    
+                    //MARK: Observe Firestore database to display the contacts list...
+                    self.database.collection("users")
+                        .document((self.currentUser?.email)!)
+                        .collection("messages")
+                        .addSnapshotListener(includeMetadataChanges: false, listener: {querySnapshot, error in
+                            if let documents = querySnapshot?.documents{
+                                self.messageList.removeAll()
+                                for document in documents{
+                                    do{
+                                        let chat  = try document.data(as: DisplayChat.self)
+                                        self.messageList.append(chat)
+                                    }catch{
+                                        print(error)
+                                    }
+                                }
+                                self.messageList.sort(by: {$0.timestamp < $1.timestamp})
+                                self.mainScreen.tableViewChats.reloadData()
+                            }
+                        })
                 }
             }
         }
@@ -63,11 +84,11 @@ class ViewController: UIViewController {
         
         title = "My Messages"
         //MARK: patching table view delegate and data source...
-        mainScreen.tableViewContacts.delegate = self
-        mainScreen.tableViewContacts.dataSource = self
+        mainScreen.tableViewChats.delegate = self
+        mainScreen.tableViewChats.dataSource = self
         
         //MARK: removing the separator line...
-        mainScreen.tableViewContacts.separatorStyle = .none
+        mainScreen.tableViewChats.separatorStyle = .none
         
         //MARK: Make the titles look large...
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -103,10 +124,19 @@ class ViewController: UIViewController {
         //MARK: Sign In Action...
         let createChatAction = UIAlertAction(title: "Create chat", style: .default, handler: {(_) in
             if let email = createChatAlert.textFields![0].text{
-                //MARK: TODO, displaying the chat screen
+                
+                let message = DisplayChat(sender: email, text: "", timestamp: Date())
+                
                 let ChatViewController = ChatViewController()
                 ChatViewController.recipient = email
-                self.navigationController?.pushViewController(ChatViewController, animated: true)
+                
+                if self.messageList.contains(where: { $0.sender == message.sender }) {
+                    self.navigationController?.pushViewController(ChatViewController, animated: true)
+                } else {
+                    self.saveChatToFireStore(chat: message)
+                    
+                    self.navigationController?.pushViewController(ChatViewController, animated: true)
+                }
             }
         })
         
@@ -120,5 +150,23 @@ class ViewController: UIViewController {
                 UITapGestureRecognizer(target: self, action: #selector(self.onTapOutsideAlert))
             )
         })
+    }
+    
+    //MARK: logic to add a contact to Firestore...
+    func saveChatToFireStore(chat: DisplayChat){
+        if let userEmail = currentUser!.email{
+            let collectionChats = database
+                .collection("users")
+                .document(userEmail)
+                .collection("messages")
+            do{
+                try collectionChats.addDocument(from: chat, completion: {(error) in
+                    if error == nil{
+                    }
+                })
+            }catch{
+                print("Error adding document!")
+            }
+        }
     }
 }
