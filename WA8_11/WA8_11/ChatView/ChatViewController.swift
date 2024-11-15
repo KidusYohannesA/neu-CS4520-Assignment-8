@@ -36,7 +36,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         chatView.sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         
         fetchChats()
-        setupKeyboardObservers()
     }
     
     func fetchChats() {
