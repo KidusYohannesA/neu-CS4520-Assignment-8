@@ -43,7 +43,7 @@ class ChatViewController: UIViewController {
 
     func fetchMessages() {
         db.collection("chats").document(chatId).collection("messages")
-            .order(by: "timestamp", descending: true)
+            .order(by: "timestamp", descending: false)
             .addSnapshotListener { [weak self] querySnapshot, error in
                 if let error = error {
                     print("Error fetching messages: \(error)")
@@ -59,7 +59,15 @@ class ChatViewController: UIViewController {
                 }
 
                 self?.chatView.tableView.reloadData()
+                self?.scrollToBottom()
             }
+    }
+    
+    func scrollToBottom() {
+        guard !messages.isEmpty else { return }
+        let lastRow = messages.count - 1
+        let indexPath = IndexPath(row: lastRow, section: 0)
+        chatView.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 
     @objc func sendMessage() {
