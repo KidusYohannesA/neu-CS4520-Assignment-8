@@ -9,10 +9,11 @@ import UIKit
 
 class RegisterView: UIView {
     var textFieldName: UITextField!
-        var textFieldEmail: UITextField!
-        var textFieldPassword: UITextField!
-        var buttonRegister: UIButton!
-        
+    var textFieldEmail: UITextField!
+    var textFieldPassword: UITextField!
+    var textRepeatPassword: UITextField!
+    var buttonRegister: UIButton!
+    
         override init(frame: CGRect){
             super.init(frame: frame)
             self.backgroundColor = .white
@@ -20,6 +21,7 @@ class RegisterView: UIView {
             setuptextFieldEmail()
             setuptextFieldPassword()
             setupbuttonRegister()
+            setupRepeatPassword()
             
             initConstraints()
         }
@@ -32,6 +34,16 @@ class RegisterView: UIView {
             textFieldName.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(textFieldName)
         }
+        
+        func setupRepeatPassword(){
+            textRepeatPassword = UITextField()
+            textRepeatPassword.placeholder = "Repeat Password"
+            textRepeatPassword.textContentType = .password
+            textRepeatPassword.isSecureTextEntry = true
+            textRepeatPassword.borderStyle = .roundedRect
+            textRepeatPassword.translatesAutoresizingMaskIntoConstraints = false
+            self.addSubview(textRepeatPassword)
+    }
         
         func setuptextFieldEmail(){
             textFieldEmail = UITextField()
@@ -74,7 +86,11 @@ class RegisterView: UIView {
                 textFieldPassword.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
                 textFieldPassword.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
                 
-                buttonRegister.topAnchor.constraint(equalTo: textFieldPassword.bottomAnchor, constant: 32),
+                textRepeatPassword.topAnchor.constraint(equalTo: textFieldPassword.bottomAnchor, constant: 16),
+                textRepeatPassword.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+                textRepeatPassword.widthAnchor.constraint(equalTo: self.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9),
+                
+                buttonRegister.topAnchor.constraint(equalTo: textRepeatPassword.bottomAnchor, constant: 32),
                 buttonRegister.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             ])
         }
