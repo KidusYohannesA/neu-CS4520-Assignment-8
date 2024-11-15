@@ -7,5 +7,5 @@
 
 import Foundation
 class Configs{
-    static let tableViewContactsID = "tableViewContactsID"
+    static let tableViewChatsID = "tableViewChatssID"
 }

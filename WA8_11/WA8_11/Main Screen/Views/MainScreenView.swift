@@ -11,7 +11,7 @@ class MainScreenView: UIView {
 
     var labelText: UILabel!
     var floatingButtonAddContact: UIButton!
-    var tableViewContacts: UITableView!
+    var tableViewChats: UITableView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,10 +49,10 @@ class MainScreenView: UIView {
     }
     
     func setupTableViewContacts(){
-        tableViewContacts = UITableView()
-        tableViewContacts.register(ChatsTableViewCell.self, forCellReuseIdentifier: Configs.tableViewContactsID)
-        tableViewContacts.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(tableViewContacts)
+        tableViewChats = UITableView()
+        tableViewChats.register(ChatsTableViewCell.self, forCellReuseIdentifier: Configs.tableViewChatsID)
+        tableViewChats.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(tableViewChats)
     }
     
     //MARK: setting up constraints...
@@ -64,10 +64,10 @@ class MainScreenView: UIView {
             //labelText.bottomAnchor.constraint(equalTo: profilePic.bottomAnchor),
             labelText.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             
-            tableViewContacts.topAnchor.constraint(equalTo: labelText.bottomAnchor, constant: 8),
-            tableViewContacts.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -8),
-            tableViewContacts.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            tableViewContacts.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            tableViewChats.topAnchor.constraint(equalTo: labelText.bottomAnchor, constant: 8),
+            tableViewChats.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -8),
+            tableViewChats.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            tableViewChats.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
             floatingButtonAddContact.widthAnchor.constraint(equalToConstant: 48),
             floatingButtonAddContact.heightAnchor.constraint(equalToConstant: 48),

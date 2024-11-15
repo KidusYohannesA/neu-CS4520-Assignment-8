@@ -85,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				118474562CE299DC00ABEE0E /* Configs.swift */,
+				353C0F162CE54C10003B1A5F /* ChatView */,
 				118474912CE4157500ABEE0E /* Register Screen */,
 				1184745A2CE29ACF00ABEE0E /* Data Models */,
 				118474542CE2993C00ABEE0E /* Main Screen */,
@@ -95,7 +96,6 @@
 				118474472CE2988D00ABEE0E /* LaunchScreen.storyboard */,
 				1184744A2CE2988D00ABEE0E /* Info.plist */,
 				111A87292CE540A40002016A /* GoogleService-Info.plist */,
-				353C0F162CE54C10003B1A5F /* ChatView */,
 			);
 			path = WA8_11;
 			sourceTree = "<group>";
