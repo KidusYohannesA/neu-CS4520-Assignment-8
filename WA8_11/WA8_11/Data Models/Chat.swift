@@ -21,3 +21,5 @@ struct Chat {
         self.timestamp = timestamp
     }
 }
+
+
